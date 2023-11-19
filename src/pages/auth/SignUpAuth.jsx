@@ -45,7 +45,7 @@ const SignUpAuth = () => {
         </Form>
       </div>
       <div className="p-4 box mt-3 text-center">
-        Already have an account? <Link to="/">Log In</Link>
+       <p style={{ fontWeight:"500"}}>Already have an account? <Link to="/" style={{textDecoration:"none"}}>Log In</Link></p> 
       </div>
       </div>
     </>

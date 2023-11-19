@@ -11,7 +11,7 @@ const LoginAuth = () => {
   return (
     <>
     <div className='main-box'>
-    <div className="p-5 box">
+    <div className=" box" >
     <h2 className="mb-1">Login on <span >Xpenstrac</span></h2>
     {error && <Alert variant="danger">{error}</Alert>}
     <Form  className='p-4' method='POST' id="logIn" onSubmit={(e)=>handleLogInSubmit(e)}>
@@ -35,11 +35,11 @@ const LoginAuth = () => {
         <Button style={{backgroundColor:"rgb(83, 2, 83)",borderColor:"rgb(83, 2, 83)"}} type="Submit">
           Log In
         </Button>
-        <span >OR</span>
+        <span style={{ fontWeight:"500"}} >OR</span>
         <hr/>
       </div>
     </Form>
-    <div className='px-5' >
+    <div className=' googleBtn' >
     < GoogleButton className="g-btn"
     type="dark" style={{backgroundColor:"rgb(83, 2, 83)",borderColor:"rgb(83, 2, 83)"}} onClick={()=>signInWithGoogle()}/>
    
@@ -47,7 +47,7 @@ const LoginAuth = () => {
   </div>
  
   <div className="p-4 box mt-3 ">
-    Don't have an account? <Link to="/signup">Sign up</Link>
+   <p style={{ fontWeight:"500"}}> Don't have an account? <Link to="/signup" style={{textDecoration:"none"}}>Sign up</Link></p>
   </div>
   </div>
 </>

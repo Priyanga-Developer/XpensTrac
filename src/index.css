@@ -9,15 +9,17 @@
 
 body {
   width: 100%;
-  background-color: #ffffff !important;
   font-family: 'Roboto', sans-serif;
 }
+/* Nav Bar */
 
  h1{
     font-family: 'Satisfy', cursive;
     font-size: 50px !important;
     font-weight:500 !important;
  }
+
+ /* Login and signUp Page */
 
  h2 span{
   font-family: 'Satisfy';
@@ -27,6 +29,7 @@ body {
 
 .box {
   border: 1px solid #d4d3d4;
+  padding: 3rem;
   border-radius: 20px;
   background-color: #fff;
   width: 40%;
@@ -42,6 +45,10 @@ body {
   flex-direction: column;
 
 }
+  .googleBtn {
+          padding-right: 3rem;
+          padding-left: 3rem ;
+        } 
 
 .g-btn {
   width: 100% !important;
@@ -60,4 +67,43 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+/* tablet */
+
+@media all and (max-width: 912px) {
+  .box {
+    width: 100%; 
+  }
+}
+/* Mobile devices */
+
+@media all and (max-width: 436px) {
+  .box {
+    width: 100%;
+    padding: 1rem !important;
+  }
+  .box .p-5 {
+        padding: 1rem !important;
+        }
+        .googleBtn {
+          padding: 0px ;
+        }
+
+      .main-box{
+        margin: 40px;
+
+      }
+}
+
+/* Small devices */
+
+@media all and (max-width: 284px) {
+  .box { 
+    padding: 0.5rem !important;
+  }
+
+ .main-box{
+        margin: 22px;
+      }
 }
