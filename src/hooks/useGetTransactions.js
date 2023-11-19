@@ -30,12 +30,12 @@ export const useGetTransactions =()=>{
             let docs=[];
             let totalIncome=0;
             let totalExpense=0;
-
+       
             snapshot.forEach((doc)=>{
                const data =doc.data();
                const id=doc.id;
-
               docs.push({...data,id});
+           
 
               if(data.transactionType==="expense"){
                 totalExpense +=Number(data.transactionAmount)
@@ -52,7 +52,7 @@ export const useGetTransactions =()=>{
               expense:totalExpense,
               income:totalIncome
             });
-            console.log(totalExpense,totalIncome)
+
        
           })
         }

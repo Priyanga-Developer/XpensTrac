@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { useDeleteTransaction } from '../../hooks/useDeleteTransaction';
 
 const Transaction = ({transactions}) => {
