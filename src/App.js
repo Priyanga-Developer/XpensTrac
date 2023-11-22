@@ -10,8 +10,7 @@ import Header from "./pages/components/Header";
 
 function App() {
   return (
-
-      
+    <>
         <DataContextProvider>
           <Header className="header"/>
           <Routes>
@@ -21,11 +20,10 @@ function App() {
                     <ProtectedRoute>
                         <TrackPage/>
                     </ProtectedRoute>
-             
       }/>
           </Routes>
       </DataContextProvider>
-  
+      </>
   
   );
 }

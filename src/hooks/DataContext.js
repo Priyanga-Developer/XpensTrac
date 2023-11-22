@@ -1,13 +1,13 @@
 import React ,{ createContext ,useEffect,useState } from 'react'
 import { auth,provider } from '../config/firebase-config'
-import {signInWithPopup ,onAuthStateChanged ,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut} from "firebase/auth"
+import {signInWithPopup ,onAuthStateChanged ,signInWithEmailAndPassword,createUserWithEmailAndPassword,signOut,updateProfile} from "firebase/auth"
 import { useNavigate } from "react-router-dom"
 
 const DataContext = createContext({});
 
 export const DataContextProvider=({children})=>{
   
-  const [user,setUser]=useState("");
+  const [user,setUser]=useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -19,13 +19,16 @@ export const DataContextProvider=({children})=>{
     setError("");
     try{
       const results= await createUserWithEmailAndPassword(auth,email,password);
-      console.log(results)
+      await updateProfile(results.user,{
+        displayName: displayName
+       })
       const authInfo={
        userID:results.user.uid,
-       name:results.user.displayName,
+       name:displayName,
        profilePhoto: results.user.photoURL,
        isAuth:true,
      };
+
      localStorage.setItem("auth",JSON.stringify(authInfo));
      navigate("/tracker");
 
@@ -42,6 +45,7 @@ export const DataContextProvider=({children})=>{
     setError("");
     try {
      const results= await signInWithEmailAndPassword(auth,email,password);
+  
      const authInfo={
       userID:results.user.uid,
       name:results.user.displayName,
