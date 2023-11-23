@@ -18,7 +18,7 @@ const Transaction = () => {
         <Row  className='pt-4'>
           <Col>
            <Card className='transactions '>
-               <Card.Header style={{backgroundColor:"#ffa93a"}}><h3>Transactions</h3></Card.Header>
+               <Card.Header style={{backgroundColor:"#ffa93a"}}><h3>Records</h3></Card.Header>
                   <Card.Body>
                     {(transactions.length)?
                       <ListGroup as="ol" numbered>
@@ -45,7 +45,7 @@ const Transaction = () => {
                               );
                             })}
                       </ListGroup>
-                      :<p>Transactions are Empty,please add Transactions</p>}
+                      :<p>No Records.Tap add money to add new expense or Income</p>}
                   </Card.Body>
            </Card>
           </Col>

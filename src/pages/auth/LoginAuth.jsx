@@ -31,7 +31,7 @@ const LoginAuth = () => {
         />
       </Form.Group>
 
-      <div className="d-grid gap-2">
+      <div className="d-grid gap-1">
         <Button style={{backgroundColor:"rgb(83, 2, 83)",borderColor:"rgb(83, 2, 83)"}} type="Submit">
           Log In
         </Button>

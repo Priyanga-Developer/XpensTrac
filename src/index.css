@@ -78,11 +78,15 @@ body {
 }
 /* Mobile devices */
 
+
 @media all and (max-width: 436px) {
-  .box {
+  .box  {
     width: 100%;
     padding: 1rem !important;
   }
+
+
+
   .box .p-5 {
         padding: 1rem !important;
         }
@@ -95,6 +99,8 @@ body {
 
       }
 }
+
+
 
 /* Small devices */
 

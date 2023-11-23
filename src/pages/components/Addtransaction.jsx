@@ -34,7 +34,7 @@ const Addtransaction = () => {
     <Row style={{padding:"50px 0px"}}>
           <Col>
               <Card style={{height: "400px"}}>
-                  <Card.Header style={{backgroundColor:"#FDD835"}}><h3>Add Transcation</h3></Card.Header>
+                  <Card.Header style={{backgroundColor:"#FDD835"}}><h3>Add  Money</h3></Card.Header>
                        <Card.Body className='Addtransaction'>
                             <Button variant="primary" onClick={handleShow}>Click Here</Button>
                        <Modal show={show} onHide={handleClose}>
