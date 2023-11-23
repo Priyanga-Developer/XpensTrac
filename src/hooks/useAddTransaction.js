@@ -14,6 +14,7 @@ export const useAddTransaction=()=>{
             transactionType,
             createdAt:serverTimestamp()
         });
+        console.log(addTransaction)
     }
     return { addTransaction };
 }

@@ -35,7 +35,7 @@ export const useGetTransactions =()=>{
                const data =doc.data();
                const id=doc.id;
               docs.push({...data,id});
-           
+
 
               if(data.transactionType==="expense"){
                 totalExpense +=Number(data.transactionAmount)
@@ -46,6 +46,7 @@ export const useGetTransactions =()=>{
             });
            
             setTransactions(docs);
+     
             let balance=totalIncome-totalExpense
             setTransactionsTotal({
               balance,
@@ -63,6 +64,7 @@ export const useGetTransactions =()=>{
     }
           getTransactions();
     },[userID]);
-   
+    
     return { transactions ,transactionsTotal };
+   
 }

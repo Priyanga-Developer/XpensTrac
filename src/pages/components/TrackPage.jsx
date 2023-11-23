@@ -4,6 +4,7 @@ import { Container  } from 'react-bootstrap'
 import Blocks from './Blocks'
 import Addtransaction from './Addtransaction'
 import Profile from './Profile'
+import PieChart from './PieChart'
 
 const TrackPage = () => {
 
@@ -13,7 +14,9 @@ const TrackPage = () => {
               <Profile/>
               <Blocks/> 
               <Addtransaction/>
+              <PieChart/>
               <Transaction />
+              
         </Container> 
     </>
   )
