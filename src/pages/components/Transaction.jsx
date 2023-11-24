@@ -5,13 +5,21 @@ import Badge from 'react-bootstrap/Badge';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 import { Col, Row ,Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const Transaction = () => {
   
   const {deleteTransaction} =useDeleteTransaction();
   const { transactions} =useGetTransactions();
   
+  const notify=()=>toast.error("Your records are deleted")
+  
   const handleDelete= (id)=>{
-    deleteTransaction(id);  
+    deleteTransaction(id);
+    notify();
+  
   }
   return (
        <>
@@ -38,14 +46,14 @@ const Transaction = () => {
                                 Rs.{transactionAmount}
                                 </Badge>
                                 <Button type='submit' 
-                                onClick={()=>handleDelete(id)}variant="danger">
+                                onClick={()=>handleDelete(id)} variant="danger">
                                   Delete</Button>
-
+                             
                               </ListGroup.Item>
                               );
                             })}
                       </ListGroup>
-                      :<p>No Records.Tap add money to add new expense or Income</p>}
+                      :<p>No Records.Tap add money to add new record!</p>}
                   </Card.Body>
            </Card>
           </Col>

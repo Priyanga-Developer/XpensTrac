@@ -4,7 +4,9 @@ import { Container  } from 'react-bootstrap'
 import Blocks from './Blocks'
 import Addtransaction from './Addtransaction'
 import Profile from './Profile'
-import PieChart from './PieChart'
+import { ToastContainer } from 'react-toastify';
+
+
 
 const TrackPage = () => {
 
@@ -14,9 +16,8 @@ const TrackPage = () => {
               <Profile/>
               <Blocks/> 
               <Addtransaction/>
-              <PieChart/>
-              <Transaction />
-              
+              <Transaction /> 
+              <ToastContainer theme='dark'/>
         </Container> 
     </>
   )

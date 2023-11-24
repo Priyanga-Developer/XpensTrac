@@ -5,6 +5,7 @@ import { Button ,Form,Alert } from 'react-bootstrap'
 import { Link  } from 'react-router-dom'
 
 
+
 const LoginAuth = () => {
   const{signInWithGoogle,setEmail,error, handleLogInSubmit,setPassword} =useContext(DataContext)
 
@@ -42,7 +43,7 @@ const LoginAuth = () => {
     <div className=' googleBtn' >
     < GoogleButton className="g-btn"
     type="dark" style={{backgroundColor:"rgb(83, 2, 83)",borderColor:"rgb(83, 2, 83)"}} onClick={()=>signInWithGoogle()}/>
-   
+
     </div>
   </div>
  

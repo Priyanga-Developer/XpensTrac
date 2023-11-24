@@ -5,30 +5,35 @@ import Modal from 'react-bootstrap/Modal';
 import { Button, Row  } from 'react-bootstrap'
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Addtransaction = () => {
-    
+
+const Addtransaction = () => {  
     const { addTransaction } =useAddTransaction();
-
     const [description,setDescription] =useState("");
     const [transactionAmount,setTransactionAmount] =useState(0);
     const [transactionType,setTransactionType] =useState("expense");
-
+   const notify=()=>toast.success ("Your records are added successfully")
 
     const handleOnSubmitTransactions =(e)=>{
         e.preventDefault();
+
         addTransaction({
           description,
           transactionAmount ,
           transactionType
         });
+       
         setDescription("");
         setTransactionAmount("");
+        notify();
       }
       const [show, setShow] = useState(false);
   
       const handleClose = () => setShow(false);
       const handleShow = () => setShow(true);
+     ;
   return (
     <>
     <Row style={{padding:"50px 0px"}}>
@@ -93,6 +98,7 @@ const Addtransaction = () => {
 
                                 <Button style={{backgroundColor:"rgb(83, 2, 83)",borderColor:"rgb(83, 2, 83)"}} 
                                             type="Submit" onClick={handleClose} > Add Transcation</Button>
+                             
                               </Form>
                             </Modal.Body>
 
