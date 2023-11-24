@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import { Col, Row ,Button } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import EditTransaction from './EditTransaction';
 
 
 const Transaction = () => {
@@ -48,6 +49,7 @@ const Transaction = () => {
                                 <Button type='submit' 
                                 onClick={()=>handleDelete(id)} variant="danger">
                                   Delete</Button>
+                                  <EditTransaction id={id}/>
                              
                               </ListGroup.Item>
                               );
