@@ -74,6 +74,12 @@ body {
 
 /* tablet */
 
+@media all and (min-width: 1024px) {
+  .googleBtn {
+   padding: 0px;
+  } 
+}
+
 @media all and (max-width: 912px) {
   .box {
     width: 100%; 

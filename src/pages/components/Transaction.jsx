@@ -27,7 +27,7 @@ const Transaction = () => {
         <Row  className='pt-4'>
           <Col>
            <Card className='transactions '>
-               <Card.Header style={{backgroundColor:"#72eddf"}}><h3>Records</h3></Card.Header>
+               <Card.Header style={{backgroundColor:"#8bbfe3"}}><h3>Records</h3></Card.Header>
                   <Card.Body>
                     {(transactions.length)?
                       <ListGroup as="ol" numbered>
