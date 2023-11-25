@@ -44,7 +44,7 @@ const Addtransaction = () => {
                             <Button variant="primary" onClick={handleShow}>Click Here</Button>
                        <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
-                              <Modal.Title>Add your transactions Here!</Modal.Title>
+                              <Modal.Title>Add your Records Here!</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                               <Form  id="transaction-form" onSubmit={(e)=>handleOnSubmitTransactions(e)}>
@@ -97,7 +97,7 @@ const Addtransaction = () => {
                                 </Form.Group>
 
                                 <Button style={{backgroundColor:"rgb(83, 2, 83)",borderColor:"rgb(83, 2, 83)"}} 
-                                            type="Submit" onClick={handleClose} > Add Transcation</Button>
+                                            type="Submit" onClick={handleClose} > Add Record</Button>
                              
                               </Form>
                             </Modal.Body>

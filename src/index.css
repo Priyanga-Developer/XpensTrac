@@ -68,6 +68,9 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.transactions button{
+  margin-left: 10px;
+}
 
 /* tablet */
 

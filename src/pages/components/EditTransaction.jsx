@@ -4,19 +4,22 @@ import { useEditTransaction } from "../../hooks/useEditTransaction"
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { Button} from 'react-bootstrap'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const EditTransaction = ({id}) => {
-  console.log(id)
+
     const [newDescription,setNewDescription]=useState("");
     const [newTransactionAmount,setNewTransactionAmount]=useState(0);
     const [newTransactionType,setNewTransactionType]=useState("");
     const {editTransaction} =useEditTransaction();
+    const notify=()=>toast.success ("Your records are updated successfully")
     const [show, setShow] = useState(false);
-  
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
+  
     const handleOnEditTransactions = async(id)=>{
         editTransaction({
             id,
@@ -24,19 +27,22 @@ const EditTransaction = ({id}) => {
             newTransactionAmount ,
             newTransactionType
         });
+       
+        handleClose();
+        notify();
     
       }
     
   return (
     <>
-     <Button variant="primary" onClick={handleShow}>Click Here</Button>
+     <Button variant="warning" onClick={handleShow}>Edit</Button>
                        <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
-                              <Modal.Title>Edit your transactions Here!</Modal.Title>
+                              <Modal.Title>Edit your Records Here!</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
-                              <Form  id="transaction-form" onSubmit={(e)=>e.preventDefault()}>
-                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                              <Form  id="editTransaction-form" onSubmit={(e)=>e.preventDefault()}>
+                                <Form.Group className="mb-3" controlId="exampleForm.ControlInput1edit">
                                   <Form.Label style={{fontWeight:"500"}}>Description</Form.Label >
                                   <Form.Control
                                     type="text"
@@ -51,7 +57,7 @@ const EditTransaction = ({id}) => {
 
                                 <Form.Group
                                   className="mb-3"
-                                  controlId="exampleForm.ControlNumber1"
+                                  controlId="exampleForm.ControlNumber1edit"
                                 >
                                   <Form.Label style={{fontWeight:"500"}} >Amount</Form.Label>
                                   <Form.Control
@@ -65,7 +71,7 @@ const EditTransaction = ({id}) => {
 
                                 <Form.Group
                                   className="mb-3"
-                                  controlId="exampleForm.Controlradio1"
+                                  controlId="exampleForm.Controlradio1edit1"
                                 >
                                   <Form.Label>Transaction Type</Form.Label>
                                   <Form.Check 
@@ -85,7 +91,7 @@ const EditTransaction = ({id}) => {
                                 </Form.Group>
 
                                 <Button style={{backgroundColor:"rgb(83, 2, 83)",borderColor:"rgb(83, 2, 83)"}} 
-                                            type="Submit" onSubmit={()=>handleOnEditTransactions(id)} > Edit Transcation</Button>
+                                            type="Submit" onClick={()=>handleOnEditTransactions(id)} >Submit</Button>
                              
                               </Form>
                             </Modal.Body>
