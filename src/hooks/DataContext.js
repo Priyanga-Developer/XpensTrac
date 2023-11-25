@@ -13,10 +13,12 @@ export const DataContextProvider=({children})=>{
   const [error, setError] = useState("");
   const [displayName ,setDisplayName] =useState("");
   const navigate=useNavigate();
+  const [isLoading,setIsLoading]=useState(false);
 
   const handleSignUpSubmit=async(e)=>{
     e.preventDefault();
     setError("");
+    setIsLoading(true);
     try{
       const results= await createUserWithEmailAndPassword(auth,email,password);
       await updateProfile(results.user,{
@@ -38,11 +40,15 @@ export const DataContextProvider=({children})=>{
       setEmail("");
       setPassword("");
     }
+    finally{
+      setTimeout(()=>setIsLoading(false),3000)
+    }
   }
 
    const handleLogInSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    setIsLoading(true);
     try {
      const results= await signInWithEmailAndPassword(auth,email,password);
   
@@ -60,8 +66,12 @@ export const DataContextProvider=({children})=>{
       setEmail("");
       setPassword("");
     }
+    finally{
+      setTimeout(()=>setIsLoading(false),3000)
+    }
   };
     const signInWithGoogle= async()=>{
+      setIsLoading(true);
       try{
          const results=await signInWithPopup(auth,provider);
          const authInfo={
@@ -75,6 +85,9 @@ export const DataContextProvider=({children})=>{
       }
       catch(err){
         setError(err.message);
+      }
+      finally{
+        setTimeout(()=>setIsLoading(false),3000)
       }
 
     }
@@ -104,7 +117,7 @@ export const DataContextProvider=({children})=>{
         <DataContext.Provider 
               value={{user,
                 setUser,navigate,email,setEmail,password,setPassword
-                ,error,setError,signInWithGoogle, handleLogInSubmit,displayName,setDisplayName,handleSignUpSubmit,handleSignOut}}
+                ,error,setError,isLoading,setIsLoading,signInWithGoogle, handleLogInSubmit,displayName,setDisplayName,handleSignUpSubmit,handleSignOut}}
         >
            {children}
         </DataContext.Provider>
