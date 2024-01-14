@@ -31,7 +31,7 @@ export const DataContextProvider=({children})=>{
        isAuth:true,
      };
 
-     localStorage.setItem("auth",JSON.stringify(authInfo));
+     localStorage.setItem("auth",JSON.stringify(authInfo ||{}));
      navigate("/tracker");
 
     }
