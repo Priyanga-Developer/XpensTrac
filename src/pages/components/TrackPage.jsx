@@ -7,8 +7,7 @@ import Profile from './Profile'
 import { ToastContainer } from 'react-toastify';
 import { useContext } from 'react'
 import DataContext from '../../hooks/DataContext'
-import SyncLoader
-from "react-spinners/SyncLoader";
+import SyncLoader from "react-spinners/SyncLoader";
 
 
 
